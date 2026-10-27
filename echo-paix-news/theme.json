@@ -4,8 +4,8 @@
   "settings": {
     "appearanceTools": true,
     "layout": {
-      "contentSize": "760px",
-      "wideSize": "1240px"
+      "contentSize": "740px",
+      "wideSize": "1280px"
     },
     "color": {
       "defaultPalette": false,
@@ -18,17 +18,17 @@
         {
           "slug": "paper",
           "name": "Papier",
-          "color": "#ffffff"
+          "color": "#fcfcfa"
         },
         {
           "slug": "muted",
           "name": "Gris clair",
-          "color": "#f1f4f5"
+          "color": "#f0f2ef"
         },
         {
           "slug": "red",
           "name": "Rouge actualité",
-          "color": "#b22b32"
+          "color": "#b82e37"
         },
         {
           "slug": "blue",
@@ -38,7 +38,7 @@
         {
           "slug": "subtle",
           "name": "Texte secondaire",
-          "color": "#52616c"
+          "color": "#576570"
         }
       ]
     },
@@ -47,13 +47,33 @@
       "fontFamilies": [
         {
           "slug": "editorial",
-          "name": "Éditorial",
-          "fontFamily": "Georgia, \"Times New Roman\", serif"
+          "name": "Newsreader",
+          "fontFamily": "Newsreader, Georgia, serif",
+          "fontFace": [
+            {
+              "fontFamily": "Newsreader",
+              "fontStyle": "normal",
+              "fontWeight": "200 800",
+              "src": [
+                "file:./assets/fonts/newsreader.ttf"
+              ]
+            }
+          ]
         },
         {
           "slug": "sans",
-          "name": "Interface",
-          "fontFamily": "Arial, Helvetica, sans-serif"
+          "name": "Manrope",
+          "fontFamily": "Manrope, Arial, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Manrope",
+              "fontStyle": "normal",
+              "fontWeight": "200 800",
+              "src": [
+                "file:./assets/fonts/manrope.ttf"
+              ]
+            }
+          ]
         }
       ],
       "fontSizes": [
@@ -88,13 +108,13 @@
     "typography": {
       "fontFamily": "var:preset|font-family|sans",
       "fontSize": "1rem",
-      "lineHeight": "1.65"
+      "lineHeight": "1.6"
     },
     "spacing": {
       "blockGap": "1.5rem",
       "padding": {
-        "left": "clamp(16px, 4vw, 48px)",
-        "right": "clamp(16px, 4vw, 48px)"
+        "left": "clamp(20px, 4vw, 64px)",
+        "right": "clamp(20px, 4vw, 64px)"
       }
     },
     "elements": {
@@ -102,7 +122,7 @@
         "typography": {
           "fontFamily": "var:preset|font-family|editorial",
           "fontWeight": "700",
-          "lineHeight": "1.18"
+          "lineHeight": "1.08"
         }
       },
       "link": {

@@ -1,3 +1,19 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
-<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} --><main class="wp-block-group"><!-- wp:heading {"level":1} --><h1 class="wp-block-heading">Cette page est introuvable</h1><!-- /wp:heading --><!-- wp:paragraph --><p>Essayez une recherche pour retrouver un article.</p><!-- /wp:paragraph --><!-- wp:search {"label":"Rechercher un article","buttonText":"Rechercher"} /--><!-- wp:home-link {"label":"Retour à l’accueil"} /--></main><!-- /wp:group -->
+<!-- wp:group {"className":"echo-main","layout":{"type":"constrained"},"tagName":"main"} -->
+<main class="wp-block-group echo-main"><!-- wp:group {"className":"echo-not-found","layout":{"type":"default"}} -->
+<div class="wp-block-group echo-not-found"><!-- wp:paragraph {"className":"echo-eyebrow"} -->
+<p class="echo-eyebrow">404 · PAGE INTROUVABLE</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">Cette page a tourné.<br>Le journal continue.</h1>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>L’adresse a peut-être changé. Retrouvez un sujet grâce à la recherche.</p>
+<!-- /wp:paragraph -->
+<!-- wp:search {"label":"Rechercher un article","buttonText":"Rechercher"} /-->
+<!-- wp:home-link {"label":"Revenir à la une"} /-->
+</div>
+<!-- /wp:group -->
+</main>
+<!-- /wp:group -->
 <!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

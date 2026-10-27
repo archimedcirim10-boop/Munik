@@ -1,16 +1,32 @@
-# Vérifications de livraison
+# Vérifications — version 1.1.0
 
-## Effectuées
+## Installation utilisée
 
-- Syntaxe PHP des deux fichiers PHP vérifiée par `token_get_all(..., TOKEN_PARSE)` sous PHP 8.3.33 (WebAssembly).
-- JSON de configuration décodé ; fichiers obligatoires et métadonnées contrôlés.
-- Les sept modèles, les deux parties de modèle et la composition d’accueil ont été analysés avec le parseur de blocs officiel de WordPress 6.8.3, sans contenu non analysé inattendu.
-- Trois contrôles ciblés de la logique des requêtes : catégorie existante, catégorie absente, articles apparentés et exclusion de l’article courant. Les API WordPress étaient simulées pour ces contrôles ; ils ne constituent pas un test d’intégration WordPress.
-- Six contrôles Chromium sur une maquette HTML isolée reprenant les styles du thème et la bibliothèque de blocs WordPress : états vides et alimentés à 375, 768 et 1440 pixels, sans débordement horizontal. Inspection visuelle d’une capture mobile vide et d’une capture de bureau alimentée. Les contenus de test sont restés hors du thème et du ZIP.
-- Intégrité ZIP vérifiée ; une seule racine `echo-paix-news/`.
+WordPress **6.8.3**, PHP **8.3** via WordPress Playground, base SQLite, Chromium réel. WordPress a été obtenu depuis son dépôt GitHub officiel pour éviter le téléchargement wordpress.org indisponible lors du premier essai. Le site de test est séparé du dépôt livré et de votre WordPress Studio local.
 
-## À vérifier dans WordPress Studio
+## Contrôles réussis
 
-L’installation WordPress de l’utilisateur est locale. La tentative de lancer WordPress Playground dans l’environnement de livraison n’a pas abouti : téléchargement WordPress bloqué par l’accès réseau (HTTP 403 à wordpress.org). L’activation réelle, les requêtes en base, la pagination, les images, le menu mobile natif, la validation des blocs dans l’Éditeur et les permissions éditoriales n’ont donc pas pu être testés en intégration.
+- Activation réelle : WordPress reconnaît le thème, sa version 1.1.0 et son type « thème à blocs ».
+- **569 blocs** analysés par les composants JavaScript de l’Éditeur WordPress : aucun bloc invalide dans les modèles, parties de modèles ou la composition d’accueil.
+- Accueil sans article testé dans Chromium à **375, 768 et 1440 pixels** : composition d’accueil affichée, états vides propres, polices locales chargées, aucun débordement horizontal ni erreur JavaScript.
+- Accueil avec **18 articles de test publiés** : article principal correct, images réellement chargées, cartes de catégories, fil d’actualité, colonne secondaire et repli graphique pour les images absentes.
+- Accueil alimenté à **375, 768 et 1440 pixels** : pas de débordement horizontal. Le sous-menu a été aligné à droite après découverte d’un débordement pendant les essais.
+- Menu mobile : ouverture du dialogue natif WordPress et fermeture avec Échap.
+- Article : titre, corps, auteur, date, image, trois liens de partage et articles apparentés affichés.
+- Archive Afrique : uniquement l’article affecté à cette catégorie.
+- Recherche avec résultats et recherche sans résultat.
+- Pagination des dernières nouvelles : les articles de la page suivante sont différents de ceux de la première page.
+- Page introuvable : modèle 404 affiché.
+- Articles de test en brouillon, en attente et programmés : absents des listes publiques.
+- Inspections visuelles des accueils réels sur ordinateur et téléphone. `screenshot.png` représente l’accueil vide fourni, sans articles de démonstration.
+- Syntaxe JavaScript contrôlée et archive ZIP vérifiée, avec une seule racine `echo-paix-news/` et des contenus correspondant aux sources.
 
-La vérification visuelle isolée n’atteste pas du rendu complet de WordPress ni du fonctionnement du menu mobile. Suivre la liste du README après activation. Aucun article, compte, média ni catégorie n’est créé automatiquement. Aucun fichier du cœur ni thème existant n’a été modifié.
+Les articles et les illustrations portant la mention « test » sont restés dans le site de validation. Aucun de ces articles, aucune base, aucun identifiant et aucune illustration de test ne sont livrés dans le thème.
+
+## Limites
+
+Votre installation Studio, vos éventuels modèles personnalisés, vos extensions et vos images ne sont pas accessibles depuis cette session. Ils doivent être vérifiés après remplacement du thème. Les modèles enregistrés dans votre base peuvent prendre priorité sur les nouveaux fichiers : suivre la procédure de mise à jour du README.
+
+La navigation et les mises en page ont été contrôlées dans Chromium ; Safari, Firefox et les lecteurs d’écran n’ont pas fait l’objet d’une campagne complète. Aucun audit d’accessibilité certifié ou test de charge n’est revendiqué. Les liens de partage ont été vérifiés comme liens sortants ; aucune publication sur les réseaux sociaux n’a été effectuée. Les permissions des rôles restent celles de WordPress, sans mécanisme ajouté.
+
+Le thème ne déploie pas de site public et ne remplit pas automatiquement votre rédaction. Les articles publiés et leurs images doivent provenir de votre WordPress.

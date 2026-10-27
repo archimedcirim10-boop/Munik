@@ -1,65 +1,77 @@
-# ECHO DE LA PAIX MEDIA — Echo Paix News
+# ÉCHO DE LA PAIX MEDIA — Echo Paix News 1.1
 
-Thème WordPress à blocs, version 1.0.0. WordPress 6.6 minimum, PHP 7.4 minimum (versions maintenues recommandées). Licence GPL v2 ou ultérieure. Aucune extension, police distante ou compilation nécessaire.
+Un thème WordPress à blocs pour une rédaction francophone en RDC et dans la région des Grands Lacs. Identité bleu profond, accent rouge pour le fil d’actualité, typographie éditoriale, une photographique, cartes de rubriques, espace vidéo et lecture longue.
 
-## Installation dans WordPress Studio
+WordPress 6.6 minimum, PHP 7.4 minimum ; utiliser des versions maintenues. Testé en intégration avec WordPress 6.8.3 et PHP 8.3. Aucune extension, compilation ou service distant requis. Les polices Newsreader et Manrope sont hébergées dans le thème, sous licence SIL Open Font License (textes inclus dans `assets/fonts/`). Le thème est sous GPL v2 ou ultérieure.
 
-1. Démarrer votre site dans Studio et ouvrir son administration WordPress.
-2. Aller dans Apparence → Thèmes → Ajouter un thème → Téléverser un thème.
-3. Choisir `echo-paix-news.zip`, installer puis activer **Echo Paix News**.
-4. Dans Réglages → Général, choisir Français et le fuseau horaire de votre rédaction. Définir le titre du site.
-5. Dans Réglages → Lecture, choisir « Les derniers articles » pour un démarrage simple. Le modèle front-page définit la une du site.
-6. Dans Apparence → Éditeur, modifier l’en-tête, le pied de page, les styles et les modèles. Ajouter le logo fourni dans le bloc Logo du site de l’en-tête : le fichier original doit être téléversé dans la médiathèque. Il n’est pas inclus dans le ZIP, la pièce jointe du chat n’étant pas disponible comme fichier source local.
+## Installer dans WordPress Studio
 
-Installation manuelle possible : extraire le dossier `echo-paix-news` dans le `wp-content/themes/` de votre installation Studio, puis activer le thème. Ne remplacer aucun autre thème.
+1. Télécharger **echo-paix-news.zip** depuis le dépôt GitHub et garder le fichier compressé.
+2. Dans Studio, démarrer votre site et ouvrir **WP Admin**.
+3. Aller dans **Apparence → Thèmes → Ajouter un thème → Téléverser un thème**.
+4. Sélectionner le ZIP, installer et activer **Echo Paix News**.
+5. Dans **Réglages → Général**, choisir Français, renseigner le titre et le fuseau horaire de la rédaction. La langue française de WordPress fournit aussi les traductions des commandes natives et des dates.
+6. Dans **Réglages → Lecture**, sélectionner « Les derniers articles » pour démarrer simplement. Le modèle `front-page` prend en charge la une.
+7. Ouvrir **Apparence → Éditeur** pour modifier l’en-tête, le pied de page, les styles et les modèles.
 
-## Rubriques et contenu réel
+Installation manuelle : extraire uniquement le dossier `echo-paix-news` dans le répertoire `wp-content/themes/` de votre site Studio. Ne remplacer aucun autre thème. Le téléchargement « Code → Download ZIP » de GitHub emballe tout le dépôt : utiliser plutôt le fichier `echo-paix-news.zip` déjà fourni.
 
-Créer les catégories dans Articles → Catégories, avec les slugs exacts suivants. Le thème ne crée ni articles ni catégories automatiquement et ne publie jamais de contenu.
+## Mettre à jour depuis la version 1.0
+
+Sauvegarder votre site Studio et, si vous avez personnalisé les modèles, exporter ces personnalisations avant de continuer. Téléverser le nouveau ZIP par le même écran de thèmes, puis choisir **Remplacer la version actuelle par la version téléversée**. Cette opération met à jour les fichiers du thème ; les articles, médias, catégories et comptes restent dans votre base WordPress.
+
+WordPress donne priorité aux modèles personnalisés enregistrés dans sa base. Si l’ancien accueil ou l’ancien en-tête reste visible, ouvrir **Apparence → Éditeur → Modèles**, sélectionner le modèle concerné, puis utiliser **Effacer les personnalisations / Réinitialiser** dans son menu d’actions (le libellé varie selon WordPress). Pour l’en-tête et le pied de page, retrouver les parties de modèles dans **Compositions → Gérer mes compositions → Parties de modèles** et réinitialiser uniquement celles que vous souhaitez remplacer. Cette action retire vos modifications de ces modèles : exporter celles-ci d’abord. Les articles et médias ne sont pas supprimés. Une simple mise à jour ne réinitialise jamais automatiquement vos modèles.
+
+Après mise à jour, recharger la page avec **Ctrl+F5**. Le thème porte la version **1.1.0**, ce qui renouvelle aussi l’URL de ses styles.
+
+## Logo, navigation et identité
+
+Le monogramme typographique **ÉP** est inclus. Pour utiliser votre logo d’origine, sélectionner le bloc **Logo du site** dans l’en-tête et téléverser l’image depuis votre ordinateur. Le monogramme s’efface automatiquement lorsque le logo est présent. Le fichier original du logo fourni dans la conversation n’était pas accessible sous forme de fichier local ; il n’est donc pas incorporé dans cette archive.
+
+La navigation est un bloc natif WordPress : menu mobile, sous-menu « Nos regards » et navigation clavier. Les liens de catégories livrés sont résolus par les API WordPress, y compris avec des permaliens simples ou une installation en sous-répertoire. Modifier ou ajouter vos liens dans l’Éditeur. Ajouter vos propres pages Contact, À propos, Mentions légales et Confidentialité selon les informations de votre structure ; aucun contact fictif n’est fourni.
+
+## Contenus réels et rubriques
+
+Le thème ne crée aucun article, compte ni catégorie automatiquement. Il ne publie jamais d’article. Sans contenu, une composition d’accueil présente le média et ses engagements ; les rubriques vides restent compactes. Dès que vous publiez, la une affiche automatiquement votre dernier article, son image et les trois articles suivants dans la colonne « À suivre ». Les dernières nouvelles affichent quatre articles avec pagination ; les rubriques présentent leurs trois dernières publications.
+
+Créer les catégories dans **Articles → Catégories** avec ces slugs :
 
 | Rubrique | Slug |
 |---|---|
-| Alertes du fil d’actualité | alerte |
-| Actualités RDC | actualites-rdc |
-| Afrique | afrique |
-| International | international |
-| Politique | politique |
-| Économie | economie |
-| Société | societe |
-| Sports | sports |
-| Culture | culture |
-| Sciences et Technologies | sciences-technologies |
-| Interviews et Reportages | interviews-reportages |
-| Vidéos | videos |
-| Paix et cohésion | paix-cohesion |
-| Femmes | femmes |
-| Jeunesse | jeunesse |
-| Gouvernance | gouvernance |
-| Enquêtes | enquetes |
-| Environnement | environnement |
-| Fact-checking | fact-checking |
+| Fil d’actualité / alertes | `alerte` |
+| Actualités RDC | `actualites-rdc` |
+| Afrique | `afrique` |
+| International | `international` |
+| Politique | `politique` |
+| Économie | `economie` |
+| Société | `societe` |
+| Sports | `sports` |
+| Culture | `culture` |
+| Sciences et Technologies | `sciences-technologies` |
+| Interviews et Reportages | `interviews-reportages` |
+| Vidéos | `videos` |
+| Paix et cohésion | `paix-cohesion` |
+| Femmes | `femmes` |
+| Jeunesse | `jeunesse` |
+| Gouvernance | `gouvernance` |
+| Enquêtes | `enquetes` |
+| Environnement | `environnement` |
+| Fact-checking | `fact-checking` |
 
-Les boucles WordPress affichent uniquement les articles publiés. Une catégorie absente ou vide produit un message d’attente. Un article peut appartenir à plusieurs catégories. Le fil utilise `alerte` ; l’article principal est le plus récent, les deux suivants apparaissent à côté. Les dernières nouvelles sont paginées ; chaque rubrique affiche ses trois derniers articles. Les articles apparentés partagent au moins une catégorie avec l’article courant et excluent ce dernier.
+Un article peut appartenir à plusieurs catégories. Le fil utilise la catégorie `alerte`. Les articles apparentés partagent une catégorie avec l’article lu et excluent celui-ci. Les rubriques absentes ne sont jamais remplacées silencieusement par une liste de tous les articles.
 
-Ajouter un titre, une image mise en avant, un texte alternatif utile et une catégorie à chaque article. Pour la rubrique Vidéos, créer des articles classés `videos` et insérer un bloc Vidéo ou Contenu embarqué dans le corps. La une affiche leurs cartes ; la vidéo se lit dans l’article. Les images restent facultatives.
+Pour publier : **Articles → Ajouter un article**, saisir le titre et le texte, choisir une catégorie, renseigner une image mise en avant et son texte alternatif, puis utiliser le circuit éditorial habituel. Des images de 1600 pixels de large ou plus sont recommandées ; choisir un cadrage qui reste pertinent sur téléphone. Sans image, une carte affiche un repère graphique ÉP, jamais une photographie d’actualité inventée. Aucun visuel fictif de reportage n’est inclus.
 
-## Personnalisation et rédaction
+Pour une vidéo, classer un article dans `videos` et insérer un bloc Vidéo ou un contenu embarqué dans son corps. La section vidéo affiche les cartes de ces articles ; la lecture se fait dans l’article. Les médias restent dans la médiathèque WordPress.
 
-Tous les textes publics livrés sont en français. Les dates, les textes natifs et les commandes WordPress suivent la langue choisie dans les réglages. Remplacer ou compléter les liens de navigation dans l’Éditeur. Les liens de catégories fournis sont résolus par WordPress, même avec des permaliens simples ou une installation en sous-répertoire. Ajouter vos pages Contact, À propos, Mentions légales et Confidentialité selon vos informations réelles ; aucun contact fictif n’est livré.
+## Édition et rédaction
 
-Les modèles sont composés de blocs natifs, notamment Boucle de requête, Image mise en avant, Auteur, Date, Catégories et Contenu de publication. La composition « Une et rubriques du journal » peut être insérée et adaptée dans l’Éditeur. Le petit bloc dynamique `echo-paix/sharing` fournit des liens Facebook, WhatsApp et courriel sans script ni suivi externe. Il est déplaçable dans l’Éditeur et affiche les liens réels sur le site. Les liens de partage transmettent l’URL uniquement après un clic.
+La composition **La une du journal — édition éditoriale** est modifiable avec le Site Editor. Les modèles utilisent notamment Boucle de requête, Auteur, Date, Catégories, Image mise en avant et Contenu de publication. Le seul petit bloc dynamique supplémentaire, **Partage de l’article**, fournit des liens Facebook, WhatsApp et courriel, sans pisteur ni script de réseau social. L’URL n’est transmise au service qu’au clic.
 
-Le thème respecte les rôles WordPress : contributeurs, auteurs, éditeurs et administrateurs conservent leurs permissions natives. Utiliser Brouillon, En attente de relecture et Planifier dans l’éditeur d’article. Seuls les utilisateurs déjà autorisés par WordPress peuvent publier. Aucun compte, système d’authentification ou stockage séparé n’est ajouté.
+Contributeurs, auteurs, éditeurs et administrateurs conservent leurs permissions natives. Brouillons, articles en attente et publications programmées sont gérés par WordPress. Les listes publiques ne montrent que les articles publiés. Aucun système d’authentification ou stockage séparé n’est ajouté.
 
-Les modifications de modèles enregistrées par l’Éditeur résident dans la base de données et prennent priorité sur les fichiers du thème. Exporter ou sauvegarder le site Studio pour conserver articles, réglages, médias et personnalisations ; le ZIP du thème seul ne contient pas ces données.
+Le ZIP contient le thème et ses styles, pas les contenus ou réglages de votre site. Exporter ou sauvegarder le site Studio pour conserver articles, médias et personnalisations. Studio est un environnement local ; rendre le site public nécessite un hébergement et un déploiement.
 
-## Vérification après activation
+## Validation
 
-- Tester l’accueil sans article, puis avec des articles publiés et des images de formats différents.
-- Créer un brouillon, un article en attente et un article planifié : ils ne doivent pas être listés publiquement.
-- Tester chaque catégorie, les résultats de recherche, une recherche sans résultat et une URL inexistante.
-- Ouvrir un article et vérifier auteur, date, contenu, partage et articles apparentés.
-- Tester le menu au clavier, le bouton mobile, les contrastes et les mises en page à 375, 768 et 1440 pixels.
-- Vérifier la pagination avec plus de six articles et les blocs dans l’Éditeur de site.
-
-Aucun fichier du cœur de WordPress n’est modifié. Aucun article de démonstration n’est inclus.
+Voir `VERIFICATIONS.md` pour les contrôles effectués dans WordPress. Après installation locale, vérifier votre logo, vos menus, vos images et les modèles personnalisés existants. Les articles et illustrations de test sont restés dans une installation jetable, hors de cette archive.

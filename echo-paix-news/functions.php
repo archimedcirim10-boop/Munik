@@ -54,9 +54,27 @@ add_filter( 'render_block_data', function ( $block ) {
         $term = get_category_by_slug( $slug );
         $block['attrs']['url'] = $term ? get_category_link( $term ) : home_url( '/?category_name=' . rawurlencode( $slug ) );
     }
+    if ( 'core/paragraph' === $block['blockName'] && strpos( $block['innerHTML'], 'href="/category/' ) !== false ) {
+        $block['innerHTML'] = preg_replace_callback( '#href="/category/([a-z0-9-]+)/"#', function ( $matches ) {
+            $term = get_category_by_slug( $matches[1] );
+            $url = $term ? get_category_link( $term ) : home_url( '/?category_name=' . rawurlencode( $matches[1] ) );
+            return 'href="' . esc_url( $url ) . '"';
+        }, $block['innerHTML'] );
+        $block['innerContent'] = array( $block['innerHTML'] );
+    }
     if ( 'core/paragraph' === $block['blockName'] && isset( $block['attrs']['className'] ) && 'echo-wordmark' === $block['attrs']['className'] ) {
         $block['innerHTML'] = str_replace( 'href="/"', 'href="' . esc_url( home_url( '/' ) ) . '"', $block['innerHTML'] );
         $block['innerContent'] = array( $block['innerHTML'] );
     }
     return $block;
 } );
+
+/** Keep story cards balanced when an editor has not selected a photograph. */
+add_filter( 'render_block_core/post-featured-image', function ( $content, $block, $instance ) {
+    if ( '' !== trim( $content ) || empty( $block['attrs']['className'] ) || false === strpos( $block['attrs']['className'], 'echo-story-image' ) ) {
+        return $content;
+    }
+    $post_id = isset( $instance->context['postId'] ) ? (int) $instance->context['postId'] : 0;
+    if ( ! $post_id ) { return $content; }
+    return '<figure class="wp-block-post-featured-image echo-story-image echo-image-fallback"><a href="' . esc_url( get_permalink( $post_id ) ) . '" aria-label="' . esc_attr( get_the_title( $post_id ) ) . '"><span class="echo-fallback-mark" aria-hidden="true">ÉP</span></a></figure>';
+}, 10, 3 );
