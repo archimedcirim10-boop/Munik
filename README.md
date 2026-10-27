@@ -1,15 +1,16 @@
 # ECHO DE LA PAIX MEDIA
 
-Thème WordPress à blocs **Echo Paix News 1.1.0** : une éditoriale, typographie locale Newsreader / Manrope, mises en page adaptées au téléphone, rubriques d’actualité et modèles d’articles.
+**Echo Paix News 2.0.0** — thème WordPress à blocs pour une rédaction francophone. Une photographique, rubriques aux compositions distinctes, typographies locales et navigation avec recherche sur mobile.
 
 **[Télécharger le thème installable](https://github.com/archimedcirim10-boop/Munik/raw/refs/heads/main/echo-paix-news.zip)**
 
-![Aperçu de la nouvelle une sans articles de démonstration](echo-paix-news/screenshot.png)
+![Accueil avant publication des premiers articles](echo-paix-news/screenshot.png)
 
-Dans WordPress Studio, ouvrir **WP Admin → Apparence → Thèmes → Ajouter un thème → Téléverser un thème**. Installer le fichier `echo-paix-news.zip`, puis activer le thème. Pour mettre à jour, choisir le remplacement de la version installée.
+Dans WordPress Studio : **WP Admin → Apparence → Thèmes → Ajouter un thème → Téléverser un thème**. Installer `echo-paix-news.zip` et activer le thème. Pour remplacer une version précédente, sélectionner le remplacement de la version installée. Si des modèles personnalisés masquent le nouveau dessin, suivre le guide de mise à jour avant de réinitialiser ces modèles.
 
-- [Installation, mise à jour, rubriques et usage](echo-paix-news/README.md)
+- [Installation, mise à jour et rédaction](echo-paix-news/README.md)
+- [Audit et direction visuelle](echo-paix-news/DESIGN.md)
 - [Vérifications et limites](echo-paix-news/VERIFICATIONS.md)
 - [Sources du thème](echo-paix-news/)
 
-Aucune extension requise. Aucun article ou compte créé automatiquement. Les contenus, images et réglages de votre site restent dans WordPress.
+Toutes les informations d’actualité viennent de WordPress. Aucun article, compte ou média de démonstration n’est créé automatiquement. Les rôles et la publication restent gérés par WordPress. Aucune application React autonome ni extension supplémentaire.

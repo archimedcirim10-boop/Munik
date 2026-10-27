@@ -1,5 +1,18 @@
 # Historique
 
+## 2.0.0
+
+- Recomposition complète selon l’audit et la direction approuvée : papier chaud, encre bleue, règles éditoriales et accent rouge mesuré.
+- Grand titre de marque, barre de date française et recherche conservée sur téléphone.
+- Titres placés hors des photographies, sans dégradés décoratifs ni ombres de cartes.
+- Une privilégiant les articles publiés épinglés ; exclusion du sujet principal des sujets secondaires.
+- Compositions distinctes pour RDC, Afrique, International, politique, économie, société, culture, vidéos, entretiens, sports, sciences, enquêtes et communautés.
+- Flux chronologique numéroté et paginé.
+- Pages d’article avec chapô, auteur, date, image, légende réelle, étiquettes, partage et articles apparentés.
+- Catégories portables résolues dans les réglages natifs du Site Editor ; les modifications natives enregistrées prennent priorité.
+- Code WordPress réparti dans `inc/`, sans authentification ou publication personnalisée.
+- Contrôles PHP, blocs, interfaces d’édition et mises en page dans une installation WordPress réelle.
+
 ## 1.1.0
 
 - Nouvelle identité : monogramme ÉP, grand bandeau de titre, bleu profond et rouge réservé au fil d’actualité.

@@ -1,35 +1,41 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 <!-- wp:group {"className":"echo-main echo-single","layout":{"type":"constrained"},"tagName":"main"} -->
-<main class="wp-block-group echo-main echo-single"><!-- wp:group {"className":"echo-article-heading","layout":{"type":"default"}} -->
-<div class="wp-block-group echo-article-heading"><!-- wp:post-terms {"term":"category","className":"echo-kicker"} /-->
+<main class="wp-block-group echo-main echo-single"><!-- wp:group {"className":"echo-article-heading","layout":{"type":"default"},"align":"wide"} -->
+<div class="wp-block-group alignwide echo-article-heading"><!-- wp:post-terms {"term":"category","className":"echo-kicker"} /-->
 <!-- wp:post-title {"level":1} /-->
+<!-- wp:post-excerpt {"excerptLength":35,"moreText":"","className":"echo-article-deck"} /-->
 <!-- wp:group {"className":"echo-byline","layout":{"type":"default"}} -->
-<div class="wp-block-group echo-byline"><!-- wp:post-author-name {"isLink":true} /-->
-<!-- wp:paragraph -->
-<p>·</p>
+<div class="wp-block-group echo-byline"><!-- wp:paragraph {"className":"echo-byline-prefix"} -->
+<p class="echo-byline-prefix">Par</p>
 <!-- /wp:paragraph -->
-<!-- wp:post-date {"format":"j F Y"} /-->
+<!-- wp:group {"className":"echo-byline-text","layout":{"type":"default"}} -->
+<div class="wp-block-group echo-byline-text"><!-- wp:post-author-name {"isLink":true} /-->
+<!-- wp:post-date {"format":"j F Y · H:i"} /-->
+</div>
+<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
 </div>
 <!-- /wp:group -->
 <!-- wp:post-featured-image {"align":"wide","className":"echo-article-image"} /-->
+<!-- wp:echo-paix/image-caption /-->
 <!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+<!-- wp:post-terms {"term":"post_tag","prefix":"Mots-clés : ","className":"echo-article-tags"} /-->
 <!-- wp:echo-paix/sharing /-->
-<!-- wp:group {"className":"echo-section","layout":{"type":"default"},"align":"wide"} -->
-<div class="wp-block-group alignwide echo-section"><!-- wp:group {"className":"echo-section-heading","layout":{"type":"default"}} -->
+<!-- wp:group {"className":"echo-section echo-related","layout":{"type":"default"},"align":"wide"} -->
+<div class="wp-block-group alignwide echo-section echo-related"><!-- wp:group {"className":"echo-section-heading","layout":{"type":"default"}} -->
 <div class="wp-block-group echo-section-heading"><!-- wp:group {"className":"echo-section-label","layout":{"type":"default"}} -->
 <div class="wp-block-group echo-section-label"><!-- wp:paragraph {"className":"echo-eyebrow"} -->
-<p class="echo-eyebrow">À LIRE ÉGALEMENT</p>
+<p class="echo-eyebrow">SUR LE MÊME SUJET</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":2} -->
-<h2 class="wp-block-heading">Poursuivre la lecture</h2>
+<h2 class="wp-block-heading">Pour poursuivre la lecture</h2>
 <!-- /wp:heading -->
 </div>
 <!-- /wp:group -->
 </div>
 <!-- /wp:group -->
-<!-- wp:query {"queryId":26,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"echoNews":true,"echoRelated":true},"className":"echo-query echo-query--cards"} -->
+<!-- wp:query {"queryId":23,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"echoNews":true,"echoRelated":true},"className":"echo-query echo-query--cards","metadata":{"name":"Articles apparentés"}} -->
 <div class="wp-block-query echo-query echo-query--cards"><!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
 <!-- wp:group {"className":"echo-story","layout":{"type":"default"}} -->
 <div class="wp-block-group echo-story"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/10","className":"echo-story-image"} /-->
@@ -40,7 +46,6 @@
 </div>
 <!-- /wp:group -->
 <!-- wp:post-title {"isLink":true,"level":3} /-->
-<!-- wp:post-excerpt {"moreText":"Lire l’article →","excerptLength":18} /-->
 </div>
 <!-- /wp:group -->
 </div>
@@ -49,7 +54,7 @@
 <!-- /wp:post-template -->
 <!-- wp:query-no-results -->
 <!-- wp:paragraph {"className":"echo-empty"} -->
-<p class="echo-empty">Aucun article publié pour le moment. Retrouvez bientôt les nouvelles de cette rubrique.</p>
+<p class="echo-empty">Les prochains articles de cette rubrique seront à retrouver ici.</p>
 <!-- /wp:paragraph -->
 
 <!-- /wp:query-no-results -->

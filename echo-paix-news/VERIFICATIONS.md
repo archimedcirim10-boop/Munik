@@ -1,32 +1,42 @@
-# Vérifications — version 1.1.0
+# Vérifications — version 2.0.0
 
-## Installation utilisée
+## Installation de validation
 
-WordPress **6.8.3**, PHP **8.3** via WordPress Playground, base SQLite, Chromium réel. WordPress a été obtenu depuis son dépôt GitHub officiel pour éviter le téléchargement wordpress.org indisponible lors du premier essai. Le site de test est séparé du dépôt livré et de votre WordPress Studio local.
+Installation WordPress réelle et isolée : **WordPress 6.8.3**, **PHP 8.5.10**, base SQLite, Chromium. Le site WordPress local de l’utilisateur dans Studio reste inaccessible depuis cette session.
+
+Les contenus de validation comprennent **72 articles publiés** et des articles privés de test en brouillon, en attente et programmés. Les illustrations de validation portent une mention de test. Ces contenus, la base, les contrôleurs de test et les images de test ne sont pas livrés dans le thème.
 
 ## Contrôles réussis
 
-- Activation réelle : WordPress reconnaît le thème, sa version 1.1.0 et son type « thème à blocs ».
-- **569 blocs** analysés par les composants JavaScript de l’Éditeur WordPress : aucun bloc invalide dans les modèles, parties de modèles ou la composition d’accueil.
-- Accueil sans article testé dans Chromium à **375, 768 et 1440 pixels** : composition d’accueil affichée, états vides propres, polices locales chargées, aucun débordement horizontal ni erreur JavaScript.
-- Accueil avec **18 articles de test publiés** : article principal correct, images réellement chargées, cartes de catégories, fil d’actualité, colonne secondaire et repli graphique pour les images absentes.
-- Accueil alimenté à **375, 768 et 1440 pixels** : pas de débordement horizontal. Le sous-menu a été aligné à droite après découverte d’un débordement pendant les essais.
-- Menu mobile : ouverture du dialogue natif WordPress et fermeture avec Échap.
-- Article : titre, corps, auteur, date, image, trois liens de partage et articles apparentés affichés.
-- Archive Afrique : uniquement l’article affecté à cette catégorie.
-- Recherche avec résultats et recherche sans résultat.
-- Pagination des dernières nouvelles : les articles de la page suivante sont différents de ceux de la première page.
-- Page introuvable : modèle 404 affiché.
-- Articles de test en brouillon, en attente et programmés : absents des listes publiques.
-- Inspections visuelles des accueils réels sur ordinateur et téléphone. `screenshot.png` représente l’accueil vide fourni, sans articles de démonstration.
-- Syntaxe JavaScript contrôlée et archive ZIP vérifiée, avec une seule racine `echo-paix-news/` et des contenus correspondant aux sources.
+| Contrôle | Résultat |
+|---|---|
+| Syntaxe PHP | Les cinq fichiers PHP du thème ont été analysés par `token_get_all(..., TOKEN_PARSE)` dans PHP. Le thème s’exécute aussi réellement dans WordPress. |
+| Structure du thème | WordPress reconnaît le thème à blocs, sa version 2.0.0, ses modèles et ses blocs de présentation. |
+| Blocs | **509 blocs** analysés par les composants JavaScript de l’Éditeur WordPress, sans bloc invalide. |
+| Site Editor | La une s’ouvre dans l’éditeur ; ses **19 requêtes** sont présentes. La conversion d’une catégorie portable en sélection native est vérifiée, puis une modification de catégorie est effectuée dans l’état de l’éditeur, sans enregistrer de changement dans la base. Aucune erreur JavaScript dans cette vérification. |
+| Accueil alimenté | Vérifié à **320, 375, 768, 1024, 1051 et 1440 pixels** : images chargées, polices locales disponibles, recherche visible, date d’édition française et aucun débordement horizontal. |
+| Accueil vide | Vérifié à **375, 768 et 1440 pixels** : composition d’attente, messages de rubrique, recherche disponible et absence de débordement. |
+| Navigation mobile | Ouverture au clavier, dialogue natif et fermeture avec Échap. |
+| Choix de la une | Un article publié épinglé prend la première place. Un article privé épinglé est ignoré. Le sujet principal n’est pas répété dans les deux sujets secondaires. Sans article épinglé publié, le dernier article publié prend la une. |
+| Fil chronologique | Pagination native : la page suivante présente d’autres articles. |
+| Articles | À **375, 768 et 1440 pixels** : titre, chapô, corps, auteur, date, image, légende réelle du média, étiquettes, trois liens de partage et articles apparentés. L’article courant est exclu des articles apparentés. Pas de débordement. |
+| Catégories | L’archive Afrique présente uniquement ses quatre articles publiés de test. |
+| Recherche | Résultats et état sans résultat vérifiés. |
+| Page introuvable | Véritable réponse HTTP 404 et modèle personnalisé affiché. |
+| Édition des catégories | Une sélection native enregistrée dans la requête prend priorité sur le slug fourni par défaut. |
+| Publication | Les marqueurs des articles en brouillon, en attente et programmés sont absents des listes publiques. |
+| JavaScript | Syntaxe du script éditorial contrôlée et aucune erreur JavaScript dans les scénarios publics testés. |
+| ZIP | Racine unique `echo-paix-news/`, intégrité vérifiée et comparaison exacte des fichiers de l’archive avec les sources. |
 
-Les articles et les illustrations portant la mention « test » sont restés dans le site de validation. Aucun de ces articles, aucune base, aucun identifiant et aucune illustration de test ne sont livrés dans le thème.
+Les compositions RDC, Afrique / International et Politique / Économie ont également été inspectées visuellement avec plusieurs publications par catégorie. Les accueils sur téléphone et ordinateur ont été inspectés. `screenshot.png` montre l’accueil sans articles de démonstration.
 
-## Limites
+## Tests non réalisés et limites
 
-Votre installation Studio, vos éventuels modèles personnalisés, vos extensions et vos images ne sont pas accessibles depuis cette session. Ils doivent être vérifiés après remplacement du thème. Les modèles enregistrés dans votre base peuvent prendre priorité sur les nouveaux fichiers : suivre la procédure de mise à jour du README.
+- Pas de test direct de votre installation Studio, de ses extensions, de ses médias ou de ses modèles personnalisés. Un modèle sauvegardé dans votre base peut masquer les nouveaux fichiers ; suivre le guide de remplacement avant de réinitialiser vos personnalisations.
+- Pas de campagne complète dans Firefox, Safari ou avec lecteurs d’écran. Aucun audit d’accessibilité certifié n’est revendiqué.
+- WordPress 6.6 et PHP 7.4 sont les minima déclarés ; ces versions minimales n’ont pas été exécutées dans cette session.
+- Les transitions de rôles et la publication programmée à l’heure prévue n’ont pas fait l’objet d’un test de bout en bout. Ces mécanismes restent entièrement ceux de WordPress, et les contenus non publiés ont été contrôlés comme absents des listes publiques.
+- Les destinations des liens de partage n’ont reçu aucune publication automatique ; aucune action sur un réseau social n’a été effectuée.
+- Pas de test de charge ou de déploiement sur hébergement public.
 
-La navigation et les mises en page ont été contrôlées dans Chromium ; Safari, Firefox et les lecteurs d’écran n’ont pas fait l’objet d’une campagne complète. Aucun audit d’accessibilité certifié ou test de charge n’est revendiqué. Les liens de partage ont été vérifiés comme liens sortants ; aucune publication sur les réseaux sociaux n’a été effectuée. Les permissions des rôles restent celles de WordPress, sans mécanisme ajouté.
-
-Le thème ne déploie pas de site public et ne remplit pas automatiquement votre rédaction. Les articles publiés et leurs images doivent provenir de votre WordPress.
+Le thème ne remplit pas votre rédaction et ne déploie pas votre site. Il conserve les fonctions de contenu et de publication natives de WordPress.

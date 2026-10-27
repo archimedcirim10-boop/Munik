@@ -4,7 +4,7 @@
   "settings": {
     "appearanceTools": true,
     "layout": {
-      "contentSize": "740px",
+      "contentSize": "720px",
       "wideSize": "1280px"
     },
     "color": {
@@ -13,32 +13,32 @@
         {
           "slug": "ink",
           "name": "Encre",
-          "color": "#102c43"
+          "color": "#142b3b"
         },
         {
           "slug": "paper",
           "name": "Papier",
-          "color": "#fcfcfa"
+          "color": "#fbfaf7"
         },
         {
           "slug": "muted",
           "name": "Gris clair",
-          "color": "#f0f2ef"
+          "color": "#eeede8"
         },
         {
           "slug": "red",
           "name": "Rouge actualité",
-          "color": "#b82e37"
+          "color": "#ad2838"
         },
         {
           "slug": "blue",
           "name": "Bleu paix",
-          "color": "#075b89"
+          "color": "#145373"
         },
         {
           "slug": "subtle",
           "name": "Texte secondaire",
-          "color": "#576570"
+          "color": "#53616b"
         }
       ]
     },
@@ -54,9 +54,7 @@
               "fontFamily": "Newsreader",
               "fontStyle": "normal",
               "fontWeight": "200 800",
-              "src": [
-                "file:./assets/fonts/newsreader.ttf"
-              ]
+              "src": ["file:./assets/fonts/newsreader.ttf"]
             }
           ]
         },
@@ -69,9 +67,7 @@
               "fontFamily": "Manrope",
               "fontStyle": "normal",
               "fontWeight": "200 800",
-              "src": [
-                "file:./assets/fonts/manrope.ttf"
-              ]
+              "src": ["file:./assets/fonts/manrope.ttf"]
             }
           ]
         }
@@ -89,13 +85,55 @@
         },
         {
           "slug": "large",
-          "name": "Titre",
-          "size": "1.6rem"
+          "name": "Intertitre",
+          "size": "1.75rem"
         },
         {
           "slug": "x-large",
+          "name": "Titre",
+          "size": "2.75rem"
+        },
+        {
+          "slug": "xx-large",
           "name": "Grand titre",
-          "size": "2.5rem"
+          "size": "4rem"
+        }
+      ]
+    },
+    "spacing": {
+      "spacingScale": {
+        "steps": 0
+      },
+      "spacingSizes": [
+        {
+          "slug": "20",
+          "name": "Très petit",
+          "size": "0.5rem"
+        },
+        {
+          "slug": "30",
+          "name": "Petit",
+          "size": "1rem"
+        },
+        {
+          "slug": "40",
+          "name": "Moyen",
+          "size": "1.5rem"
+        },
+        {
+          "slug": "50",
+          "name": "Grand",
+          "size": "2rem"
+        },
+        {
+          "slug": "60",
+          "name": "Section",
+          "size": "3rem"
+        },
+        {
+          "slug": "70",
+          "name": "Très grand",
+          "size": "4.5rem"
         }
       ]
     }
@@ -121,7 +159,7 @@
       "heading": {
         "typography": {
           "fontFamily": "var:preset|font-family|editorial",
-          "fontWeight": "700",
+          "fontWeight": "500",
           "lineHeight": "1.08"
         }
       },
