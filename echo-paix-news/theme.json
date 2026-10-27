@@ -5,40 +5,45 @@
     "appearanceTools": true,
     "layout": {
       "contentSize": "720px",
-      "wideSize": "1280px"
+      "wideSize": "1320px"
     },
     "color": {
       "defaultPalette": false,
       "palette": [
         {
           "slug": "ink",
-          "name": "Encre",
-          "color": "#142b3b"
+          "name": "Noir éditorial",
+          "color": "#171717"
         },
         {
           "slug": "paper",
-          "name": "Papier",
-          "color": "#fbfaf7"
+          "name": "Blanc",
+          "color": "#FFFFFF"
         },
         {
-          "slug": "muted",
-          "name": "Gris clair",
-          "color": "#eeede8"
+          "slug": "coral",
+          "name": "Corail éditorial",
+          "color": "#E85B4F"
         },
         {
           "slug": "red",
           "name": "Rouge actualité",
-          "color": "#ad2838"
+          "color": "#D52B1E"
+        },
+        {
+          "slug": "muted",
+          "name": "Gris clair",
+          "color": "#D9D9D9"
         },
         {
           "slug": "blue",
-          "name": "Bleu paix",
-          "color": "#145373"
+          "name": "Encre",
+          "color": "#171717"
         },
         {
           "slug": "subtle",
           "name": "Texte secondaire",
-          "color": "#53616b"
+          "color": "#555555"
         }
       ]
     },
@@ -47,27 +52,29 @@
       "fontFamilies": [
         {
           "slug": "editorial",
-          "name": "Newsreader",
-          "fontFamily": "Newsreader, Georgia, serif",
+          "name": "Playfair Display",
+          "fontFamily": "\"Playfair Display\", Georgia, serif",
           "fontFace": [
             {
-              "fontFamily": "Newsreader",
+              "fontFamily": "Playfair Display",
               "fontStyle": "normal",
-              "fontWeight": "200 800",
-              "src": ["file:./assets/fonts/newsreader.ttf"]
+              "fontWeight": "400 900",
+              "fontDisplay": "swap",
+              "src": ["file:./assets/fonts/playfair-display.woff2"]
             }
           ]
         },
         {
           "slug": "sans",
-          "name": "Manrope",
-          "fontFamily": "Manrope, Arial, sans-serif",
+          "name": "Inter",
+          "fontFamily": "Inter, Arial, sans-serif",
           "fontFace": [
             {
-              "fontFamily": "Manrope",
+              "fontFamily": "Inter",
               "fontStyle": "normal",
-              "fontWeight": "200 800",
-              "src": ["file:./assets/fonts/manrope.ttf"]
+              "fontWeight": "100 900",
+              "fontDisplay": "swap",
+              "src": ["file:./assets/fonts/inter.woff2"]
             }
           ]
         }
@@ -159,7 +166,7 @@
       "heading": {
         "typography": {
           "fontFamily": "var:preset|font-family|editorial",
-          "fontWeight": "500",
+          "fontWeight": "600",
           "lineHeight": "1.08"
         }
       },

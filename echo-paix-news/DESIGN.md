@@ -1,43 +1,43 @@
-# Direction éditoriale — version 2.0
+# Direction Premium Editorial Newspaper — version 3.0
 
-## Audit de la version 1.1
+## Intention
 
-Le thème disposait déjà de blocs natifs et de requêtes dynamiques. Ses faiblesses visuelles concernaient la répétition de dix grilles de rubriques identiques, les petits corps de texte secondaires, un en-tête encombré, les titres superposés aux photographies, les panneaux décoratifs et une adaptation mobile trop uniforme. La recherche disparaissait sur les petits écrans. Le sujet principal était simplement le plus récent.
+Une identité originale pour ECHO DE LA PAIX MEDIA, inspirée des principes de mise en page d’un grand journal : titre de marque dominant, typographie classique, colonnes asymétriques, règles fines et photographie sans cadres décoratifs. La direction repose sur la description de référence fournie ; aucune capture du média de référence n’était jointe au dernier brief. Aucun logo ou élément de marque d’un autre journal n’est repris.
 
-## Direction approuvée
+## Système visuel
 
-Un journal numérique francophone : papier blanc chaud, encre bleu profond, règles fines, rouge réservé aux accents éditoriaux, photographie lisible et titres majoritairement placés sous les images. Pas de dégradés décoratifs, d’ombres de cartes ou de surfaces arrondies répétitives.
+- Blanc `#FFFFFF`, noir `#171717`, corail `#E85B4F`, rouge `#D52B1E`, règles grises `#D9D9D9`.
+- Playfair Display pour les titres et citations ; Inter pour les résumés, le texte des articles, l’interface et les métadonnées.
+- Polices hébergées dans le thème en WOFF2 : conversion de format sans changement du dessin, de la couverture de caractères ou des noms. Licences SIL OFL incluses.
+- Corail réservé aux grands repères et règles ; rouge plus soutenu pour les petites catégories et les liens actifs, afin de garder un contraste lisible.
+- Aucun dégradé décoratif, carte arrondie ou ombre de surface.
 
-Les polices locales Newsreader et Manrope distinguent les titres, la lecture longue, les résumés et les outils de navigation. Le grand titre de marque remplace le monogramme de substitution. Un bloc Logo du site reste disponible pour l’identité fournie par la rédaction.
+## En-tête à trois niveaux
 
-## Compositions de la une
+1. Règle noire épaisse.
+2. Grand titre ECHO DE LA PAIX MEDIA, date, signature institutionnelle et liens utilitaires sobres. Le logo natif WordPress peut être ajouté.
+3. Navigation encadrée de deux règles noires : Accueil, RDC, Afrique, Monde, Politique, Économie, Société, Culture, Sports, Analyses. Recherche et menu mobile natifs.
 
-| Zone | Composition |
-|---|---|
-| Barre d’information | Date française dynamique, fuseau horaire WordPress |
-| En-tête | Titre de marque, repère géographique et signature concise |
-| Navigation | Rubriques, menu accessible et recherche conservée sur mobile |
-| Fil d’actualité | Dernier article publié dans `alerte`, sans faux indicateur de direct |
-| Une | Grand sujet photographique et deux sujets secondaires ; priorité aux articles épinglés publiés |
-| En continu | Six titres chronologiques numérotés, pagination native |
-| RDC | Grand sujet et quatre titres complémentaires |
-| Afrique | Sujet photographique et deux titres de soutien |
-| International | Titre principal avant sa photographie, puis dépêches |
-| Politique | Hiérarchie de titres sans images systématiques |
-| Économie | Lignes compactes avec vignettes |
-| Société | Un grand sujet et deux sujets complémentaires |
-| Culture | Deux grands cadres photographiques |
-| Vidéos | Sujet large et liste multimédia complémentaire |
-| Entretiens et reportages | Images adaptées aux portraits et textes associés |
-| Sports et sciences | Deux bureaux éditoriaux complémentaires |
-| Enquêtes | Titres éditoriaux, règles fines et accent rouge |
-| Paix et communautés | Publications issues de six catégories thématiques natives |
-| Pied de page | Identité, navigation, pages publiées réelles et mentions sobres |
+## Une asymétrique
 
-Sur mobile, les compositions changent de disposition selon leur fonction. Les sujets secondaires restent en deux colonnes lorsqu’ils sont lisibles ; les flux et articles de lecture longue passent en colonne. Les titres longs ne sont pas coupés. Les images de repli sont typographiques, sans photographie d’actualité inventée.
+| Colonne | Largeur des pistes sur ordinateur | Composition |
+|---|---|---|
+| Principale | 50 % | Catégorie, grand titre, extrait, auteur, puis photographie |
+| Centrale | 25 % | Deux sujets avec image, titre, catégorie et auteur |
+| Droite | 25 % | Trois sujets alternant texte, image et vignette |
 
-## Intégration conservée
+Les règles verticales structurent les colonnes ; des règles horizontales séparent les sujets. La sélection principale privilégie un article publié épinglé. Les cinq sujets de soutien excluent le principal et ne sont pas répétés entre les deux colonnes de soutien.
 
-Tous les articles viennent de WordPress. Le thème conserve les publications, catégories, étiquettes, auteurs, médias, rôles, brouillons, validations et programmations. Aucun article n’est publié par le thème. Les catégories des requêtes restent modifiables dans le Site Editor. Les catégories portables par slug sont converties en sélections natives pour l’aperçu ; une sélection native enregistrée prend priorité.
+Sur tablette, le sujet principal occupe la première rangée et les deux colonnes de soutien se placent côte à côte. Sur téléphone, les trois zones se succèdent en une seule colonne. La taille du titre de marque et les règles de navigation s’adaptent sans déborder.
 
-Le thème n’ajoute aucun système d’authentification, aucune application React autonome, aucun service distant et aucune base séparée. Son petit script d’édition utilise uniquement les composants intégrés de WordPress.
+## Rubriques
+
+Le flux Dernières actualités, le bureau RDC, les bureaux Afrique / International, les titres politiques, les lignes économiques avec vignettes, les grands sujets de société et culture, les vidéos et les portraits d’entretiens conservent des compositions différentes. Analyses et Décryptages utilise une catégorie native propre, des repères typographiques et de grands titres. Les autres rubriques historiques restent disponibles.
+
+## Pied de page
+
+Les icônes natives Facebook, Instagram, X, YouTube et LinkedIn sont visibles et prêtes à recevoir leurs URL. Elles restent non cliquables sans adresse. Le bouton Faire un don reste désactivé sans URL ; avec une adresse, le bloc Bouton natif devient un lien normal. Le thème ne fournit ni profil fictif, ni prestataire, ni formulaire de paiement.
+
+## WordPress conservé
+
+Articles, auteurs, catégories, étiquettes, médias, rôles, brouillons, relectures et programmations restent natifs. Les requêtes n’affichent que des articles publiés. Le Site Editor conserve l’édition des modèles, rubriques, liens sociaux et bouton de don. Aucune application React autonome ou base séparée.

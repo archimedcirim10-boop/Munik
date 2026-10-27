@@ -25,6 +25,10 @@ function echo_paix_resolve_links( $block ) {
 		}, $block['innerHTML'] );
 		$block['innerContent'] = array( $block['innerHTML'] );
 	}
+	if ( isset( $block['attrs']['className'] ) && 'echo-utility-links' === $block['attrs']['className'] ) {
+		$block['innerHTML'] = str_replace( 'href="/#notre-mission"', 'href="' . esc_url( home_url( '/#notre-mission' ) ) . '"', $block['innerHTML'] );
+		$block['innerContent'] = array( $block['innerHTML'] );
+	}
 	if ( isset( $block['attrs']['className'] ) && 'echo-wordmark' === $block['attrs']['className'] ) {
 		$block['innerHTML']    = str_replace( 'href="/"', 'href="' . esc_url( home_url( '/' ) ) . '"', $block['innerHTML'] );
 		$block['innerContent'] = array( $block['innerHTML'] );

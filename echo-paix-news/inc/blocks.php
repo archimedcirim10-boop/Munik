@@ -66,6 +66,36 @@ function echo_paix_featured_image_fallback( $content, $block, $instance ) {
 	if ( ! $post_id ) {
 		return $content;
 	}
-	return '<figure class="wp-block-post-featured-image echo-story-image echo-image-fallback"><a href="' . esc_url( get_permalink( $post_id ) ) . '" aria-label="' . esc_attr( get_the_title( $post_id ) ) . '"><span aria-hidden="true">ÉCHO<br>DE LA PAIX</span></a></figure>';
+	return '<figure class="wp-block-post-featured-image echo-story-image echo-image-fallback"><a href="' . esc_url( get_permalink( $post_id ) ) . '" aria-label="' . esc_attr( get_the_title( $post_id ) ) . '"><span aria-hidden="true">ECHO<br>DE LA PAIX</span></a></figure>';
 }
 add_filter( 'render_block_core/post-featured-image', 'echo_paix_featured_image_fallback', 10, 3 );
+
+/** Display unconfigured footer icons without inventing profile URLs. */
+function echo_paix_social_placeholders( $content, $block ) {
+	$classes = isset( $block['attrs']['className'] ) ? explode( ' ', $block['attrs']['className'] ) : array();
+	if ( '' !== trim( $content ) || ! in_array( 'echo-social-slot', $classes, true ) ) {
+		return $content;
+	}
+	$services = array( 'facebook' => 'Facebook', 'instagram' => 'Instagram', 'x' => 'X', 'youtube' => 'YouTube', 'linkedin' => 'LinkedIn' );
+	$service  = isset( $block['attrs']['service'] ) ? $block['attrs']['service'] : '';
+	if ( ! isset( $services[ $service ] ) || ! function_exists( 'block_core_social_link_get_icon' ) ) {
+		return $content;
+	}
+	return '<li class="wp-social-link wp-social-link-' . esc_attr( $service ) . ' wp-block-social-link echo-social-slot echo-social-unlinked"><span class="wp-block-social-link-anchor" role="img" aria-label="' . esc_attr( $services[ $service ] ) . '">' . block_core_social_link_get_icon( $service ) . '</span></li>';
+}
+add_filter( 'render_block_core/social-link', 'echo_paix_social_placeholders', 10, 2 );
+
+/** A donation button stays disabled until an editor supplies its destination. */
+function echo_paix_prepare_donate_button( $content, $block ) {
+	$classes = isset( $block['attrs']['className'] ) ? explode( ' ', $block['attrs']['className'] ) : array();
+	if ( ! in_array( 'echo-donate', $classes, true ) ) {
+		return $content;
+	}
+	$processor = new WP_HTML_Tag_Processor( $content );
+	if ( ! $processor->next_tag( 'a' ) || $processor->get_attribute( 'href' ) ) {
+		return $content;
+	}
+	$content = preg_replace( '/<a\b/', '<button type="button" disabled aria-disabled="true"', $content, 1 );
+	return preg_replace( '#</a>#', '</button>', $content, 1 );
+}
+add_filter( 'render_block_core/button', 'echo_paix_prepare_donate_button', 10, 2 );

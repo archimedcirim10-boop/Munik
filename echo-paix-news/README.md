@@ -1,8 +1,8 @@
-# ECHO DE LA PAIX MEDIA — Echo Paix News 2.0
+# ECHO DE LA PAIX MEDIA — Echo Paix News 3.0
 
-Thème WordPress à blocs destiné à une rédaction francophone. La version 2.0 adopte une composition de journal : grand titre de marque, photographie lisible, titres éditoriaux, bureaux de rubriques différenciés et navigation adaptée au téléphone.
+Thème WordPress à blocs destiné à une rédaction francophone. La version 3.0 adopte le style Premium Editorial Newspaper : blanc pur, noir, accents corail et rouge, grand titre de marque et une asymétrique en trois colonnes.
 
-WordPress 6.6 minimum, PHP 7.4 minimum ; versions maintenues recommandées. Validation réalisée sur WordPress 6.8.3 et PHP 8.5.10. Aucune extension ni compilation requise. Polices Newsreader et Manrope fournies localement, avec leurs licences SIL OFL dans `assets/fonts/`. Code du thème sous GPL v2 ou ultérieure.
+WordPress 6.6 minimum, PHP 7.4 minimum ; versions maintenues recommandées. Validation réalisée sur WordPress 6.8.3 et PHP 8.5.10. Aucune extension ni compilation requise. Polices Playfair Display et Inter fournies localement en WOFF2 (conversion de format sans modification des fontes), avec leurs licences SIL OFL dans `assets/fonts/`. Code du thème sous GPL v2 ou ultérieure.
 
 ## Installation dans WordPress Studio
 
@@ -16,11 +16,13 @@ WordPress 6.6 minimum, PHP 7.4 minimum ; versions maintenues recommandées. Vali
 
 Installation manuelle : extraire le dossier `echo-paix-news` dans le `wp-content/themes/` de votre site Studio. Ne remplacer aucun autre thème.
 
-## Remplacer la version 1.0 ou 1.1
+## Mettre à jour depuis une version 1.x ou 2.x
 
-Sauvegarder votre site Studio et exporter vos personnalisations de modèles avant de commencer. Téléverser le ZIP 2.0 par le même écran des thèmes, puis choisir **Remplacer la version actuelle par la version téléversée**. La version affichée doit être **2.0.0**. Recharger ensuite la page avec **Ctrl+F5**.
+Sauvegarder votre site Studio et exporter vos personnalisations de modèles avant de commencer. Téléverser le ZIP 3.0 par le même écran des thèmes, puis choisir **Remplacer la version actuelle par la version téléversée**. La version affichée doit être **3.0.0**. Recharger ensuite la page avec **Ctrl+F5**.
 
 Les modèles enregistrés dans la base par l’Éditeur ont priorité sur les nouveaux fichiers. Si l’ancien accueil reste visible, aller dans **Apparence → Éditeur → Modèles**, ouvrir les actions du modèle d’accueil et utiliser **Effacer les personnalisations / Réinitialiser**. Le libellé varie selon la version WordPress. Pour l’en-tête et le pied de page, retrouver leurs parties de modèles dans **Compositions → Gérer mes compositions → Parties de modèles** et réinitialiser uniquement les parties que vous souhaitez remplacer. Exporter les personnalisations avant cette opération : une réinitialisation retire vos modifications de ces modèles. Elle ne supprime pas vos articles ou médias.
+
+Si vos anciennes polices ou couleurs persistent également, exporter vos styles personnalisés, puis utiliser la réinitialisation des styles dans le panneau **Styles** du Site Editor seulement si vous souhaitez adopter le nouveau système visuel.
 
 Le thème ne réinitialise aucun modèle automatiquement. Il ne modifie pas les comptes, contenus, médias ou permissions.
 
@@ -30,7 +32,17 @@ Le titre typographique du média fonctionne dès l’activation. Pour utiliser v
 
 La barre d’édition affiche la date en français selon le fuseau horaire configuré dans WordPress. Les dates des articles et les commandes natives suivent les traductions WordPress installées.
 
-La navigation et la recherche restent disponibles sur mobile. Modifier vos liens de rubriques dans le bloc Navigation. Le pied de page liste vos pages WordPress publiées : créer vos vraies pages À propos, Contact, Mentions légales et Confidentialité, et retirer ou renommer les pages d’exemple créées par WordPress si nécessaire. Aucun contact, réseau social ou document juridique fictif n’est ajouté.
+La navigation et la recherche restent disponibles sur mobile. Modifier vos liens de rubriques dans le bloc Navigation. Le pied de page liste vos pages WordPress publiées : créer vos vraies pages À propos, Contact, Mentions légales et Confidentialité, et retirer ou renommer les pages d’exemple créées par WordPress si nécessaire. Aucune adresse de profil social, contact ou document juridique fictif n’est ajouté.
+
+## Réseaux sociaux et bouton Faire un don
+
+Dans **Apparence → Éditeur → Compositions → Parties de modèles → Pied de page**, sélectionner les blocs **Icônes de réseaux sociaux**. Facebook, Instagram, X, YouTube et LinkedIn sont prêts à recevoir les URL de vos pages. Cliquer chaque icône dans l’Éditeur, renseigner sa vraie adresse, puis enregistrer. Retirer les réseaux que la rédaction n’utilise pas ou en ajouter avec les blocs natifs.
+
+Sans URL, une icône reste visible sur le site comme repère non cliquable. Dès qu’une URL est renseignée, elle devient un lien natif WordPress. Aucun profil fictif n’est fourni et aucun widget de réseau social ne suit les lecteurs.
+
+Le bouton **Faire un don** est placé dans le bandeau de soutien du pied de page. Le sélectionner dans le Site Editor puis utiliser l’outil de lien pour saisir l’URL de votre vraie page de don ou du prestataire choisi. Sans cette adresse, le bouton public reste désactivé : il n’ouvre aucun paiement et ne collecte aucune donnée. Avec une adresse, il devient un lien normal vers votre destination. Le thème n’ajoute pas de formulaire de paiement et ne prétend pas traiter des dons. Ne saisir aucune clé secrète dans ce lien.
+
+Les URL sont volontairement laissées à configurer, car elles n’ont pas été fournies pendant la réalisation. Enregistrer le pied de page après chaque modification.
 
 ## Rubriques
 
@@ -54,6 +66,7 @@ Créer les catégories dans **Articles → Catégories**, avec les slugs suivant
 | Femmes | `femmes` |
 | Jeunesse | `jeunesse` |
 | Gouvernance | `gouvernance` |
+| Analyses et Décryptages | `analyses-decryptages` |
 | Enquêtes | `enquetes` |
 | Environnement | `environnement` |
 | Fact-checking | `fact-checking` |
@@ -64,7 +77,7 @@ Le thème ne crée ni catégories ni articles. Une rubrique absente ou sans arti
 
 ## Choisir la une et publier
 
-La une privilégie le plus récent des articles **publiés et épinglés** à la page d’accueil avec l’option native WordPress. Sans article épinglé publié, elle utilise le dernier article publié. Les deux sujets secondaires excluent le sujet principal. Le fil « En continu » reste chronologique et paginé. La catégorie `alerte` alimente le bandeau d’actualité.
+La une privilégie le plus récent des articles **publiés et épinglés** à la page d’accueil avec l’option native WordPress. Sans article épinglé publié, elle utilise le dernier article publié. Les cinq sujets secondaires, répartis entre les deux colonnes de droite sur ordinateur, excluent le sujet principal et ne se répètent pas entre ces deux colonnes. Le fil « Dernières actualités » reste chronologique et paginé. La catégorie `alerte` alimente le bandeau d’actualité.
 
 Pour alimenter le journal : **Articles → Ajouter un article**, saisir titre, texte et catégorie, choisir l’auteur selon vos permissions, ajouter l’image mise en avant et son texte alternatif, puis suivre votre procédure de publication. Un résumé manuel dans le champ **Extrait** améliore la présentation du chapô et des cartes. À défaut, WordPress génère un extrait depuis le contenu.
 

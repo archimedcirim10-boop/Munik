@@ -1,5 +1,16 @@
 # Historique
 
+## 3.0.0
+
+- Direction Premium Editorial Newspaper : blanc, noir, corail et rouge, polices Playfair Display / Inter hébergées localement en WOFF2.
+- Grand titre de marque, règle noire supérieure, signature institutionnelle et navigation française à dix entrées.
+- Une asymétrique 50/25/25 : catégorie, titre, extrait et auteur avant l’image principale ; deux colonnes de sujets secondaires sans doublons.
+- Adaptation en deux colonnes sur tablette et une sur mobile, sans cadres arrondis ni ombres décoratives.
+- Rubrique Analyses et Décryptages avec requête native de catégorie.
+- Auteurs affichés sur les cartes, nouvelle typographie des articles et citations.
+- Pied de page avec cinq icônes sociales natives prêtes à recevoir leurs adresses et bouton Faire un don éditable. Sans URL, ces éléments restent inactifs.
+- Conservation des publications, rôles, catégories, médias, requêtes et fonctions du Site Editor.
+
 ## 2.0.0
 
 - Recomposition complète selon l’audit et la direction approuvée : papier chaud, encre bleue, règles éditoriales et accent rouge mesuré.
