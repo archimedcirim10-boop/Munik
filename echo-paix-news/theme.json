@@ -1,0 +1,149 @@
+{
+  "$schema": "https://schemas.wp.org/wp/6.6/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "layout": {
+      "contentSize": "760px",
+      "wideSize": "1240px"
+    },
+    "color": {
+      "defaultPalette": false,
+      "palette": [
+        {
+          "slug": "ink",
+          "name": "Encre",
+          "color": "#102c43"
+        },
+        {
+          "slug": "paper",
+          "name": "Papier",
+          "color": "#ffffff"
+        },
+        {
+          "slug": "muted",
+          "name": "Gris clair",
+          "color": "#f1f4f5"
+        },
+        {
+          "slug": "red",
+          "name": "Rouge actualité",
+          "color": "#b22b32"
+        },
+        {
+          "slug": "blue",
+          "name": "Bleu paix",
+          "color": "#075b89"
+        },
+        {
+          "slug": "subtle",
+          "name": "Texte secondaire",
+          "color": "#52616c"
+        }
+      ]
+    },
+    "typography": {
+      "fluid": true,
+      "fontFamilies": [
+        {
+          "slug": "editorial",
+          "name": "Éditorial",
+          "fontFamily": "Georgia, \"Times New Roman\", serif"
+        },
+        {
+          "slug": "sans",
+          "name": "Interface",
+          "fontFamily": "Arial, Helvetica, sans-serif"
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "small",
+          "name": "Petit",
+          "size": "0.875rem"
+        },
+        {
+          "slug": "medium",
+          "name": "Courant",
+          "size": "1rem"
+        },
+        {
+          "slug": "large",
+          "name": "Titre",
+          "size": "1.6rem"
+        },
+        {
+          "slug": "x-large",
+          "name": "Grand titre",
+          "size": "2.5rem"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var:preset|color|paper",
+      "text": "var:preset|color|ink"
+    },
+    "typography": {
+      "fontFamily": "var:preset|font-family|sans",
+      "fontSize": "1rem",
+      "lineHeight": "1.65"
+    },
+    "spacing": {
+      "blockGap": "1.5rem",
+      "padding": {
+        "left": "clamp(16px, 4vw, 48px)",
+        "right": "clamp(16px, 4vw, 48px)"
+      }
+    },
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var:preset|font-family|editorial",
+          "fontWeight": "700",
+          "lineHeight": "1.18"
+        }
+      },
+      "link": {
+        "color": {
+          "text": "var:preset|color|blue"
+        },
+        ":hover": {
+          "color": {
+            "text": "var:preset|color|red"
+          }
+        }
+      }
+    },
+    "blocks": {
+      "core/post-title": {
+        "elements": {
+          "link": {
+            "color": {
+              "text": "var:preset|color|ink"
+            }
+          }
+        }
+      },
+      "core/button": {
+        "color": {
+          "background": "var:preset|color|blue",
+          "text": "var:preset|color|paper"
+        }
+      }
+    }
+  },
+  "templateParts": [
+    {
+      "name": "header",
+      "title": "En-tête",
+      "area": "header"
+    },
+    {
+      "name": "footer",
+      "title": "Pied de page",
+      "area": "footer"
+    }
+  ]
+}
